@@ -1,54 +1,53 @@
-# 🔐 LockrSafe – Secure, Local-First Password Manager (CLI)
+# 🔐 LockrSafe – Secure, Local-First Password Manager (Web + CLI)
 
-**LockrSafe** is a secure, offline password manager built in Node.js.  
-It stores your passwords **encrypted locally** and runs entirely in your terminal.  
-Perfect for privacy-conscious users and developers who want to learn encryption, CLI, and clean code structure.
+**LockrSafe** is a secure, offline-first password manager built with Node.js. It encrypts and stores your vault locally and now comes with a slick web interface — all running on your own machine.
+
+> Perfect for privacy-conscious users and developers learning encryption, secure UX, and fullstack modularity.
 
 ---
 
 ## ✨ Features
 
 - 🔐 AES-256 encrypted vault (`vault.json`)
-- 🔑 Master password for unlocking your vault
-- 📋 Copy password to clipboard (auto-clears in 30 seconds)
-- 🧹 Auto-logout after 5 min of inactivity
+- 🔑 Master password-protected access
+- 🌐 Web UI (localhost) + CLI support
+- 📋 Copy passwords to clipboard (via browser)
+- 🧪 Strong password generator + strength meter
+- 🔍 Search, edit, delete entries easily
 - 🔁 Import/export vault as JSON
-- 🔍 Search, edit, and delete saved credentials
-- ⚠️ Lock after 3 failed login attempts
-- 🧪 Random strong password generator
-- 🛠️ Easy to customize and extend (100% local, no server)
+- 🧹 Auto-lock on logout or password mismatch
+- 🛠️ 100% local, open-source, no account needed
 
 ---
 
 ## 📦 Tech Stack
 
-- Node.js (with native `crypto` module)
-- CLI interface with `readline-sync`
-- Clipboard management with `clipboardy`
-- Modular codebase for easy hacking
+- Node.js backend (Express)
+- Native `crypto` module for encryption
+- HTML/CSS/JS frontend
+- FontAwesome icons, clipboard API
 
 ---
 
 ## 🚀 Getting Started
 
 ### 1. Clone the project
-
 ```bash
 git clone https://github.com/yourusername/lockrsafe.git
 cd lockrsafe
 ```
 
 ### 2. Install dependencies
-
 ```bash
 npm install
 ```
 
 ### 3. Run the app
-
 ```bash
 npm start
 ```
+
+> Then go to: [http://localhost:3000](http://localhost:3000)
 
 ---
 
@@ -56,13 +55,12 @@ npm start
 
 ```
 lockrsafe/
-├── index.js             # Main app logic
-├── vault.json           # Encrypted vault (created after first use)
-├── lib/
-│   ├── crypto.js        # AES encryption / decryption
-│   ├── storage.js       # Read/write vault + backups
-│   └── ui.js            # CLI input/output and features
-├── backup/              # Auto-generated encrypted backups
+├── server.js            # Express API backend
+├── vault.json           # Encrypted vault (auto-generated)
+├── public/              # Frontend static files
+│   ├── index.html       # Main UI layout
+│   ├── style.css        # Styles
+│   └── app.js           # App logic (frontend)
 ├── package.json
 └── README.md
 ```
@@ -73,30 +71,29 @@ lockrsafe/
 
 | Feature         | Method              |
 |----------------|---------------------|
-| Cipher          | AES-256-CBC         |
-| Key Derivation  | PBKDF2 + SHA-256    |
-| Vault Format    | Encrypted JSON file |
-| Clipboard       | Clears after 30s    |
+| Cipher         | AES-256-CBC         |
+| Key Derivation | PBKDF2 + SHA-256    |
+| Vault Format   | Encrypted JSON file |
+| Passwords      | Stored securely in browser memory |
 
 ---
 
 ## 📌 Roadmap
 
-- ✅ Secure CLI vault with full features
-- 🔜 GUI interface with Electron
-- 🔜 Mobile version (Capacitor or React Native)
-- 🔜 Browser extension (auto-fill support)
+- ✅ Full-featured local password manager
+- ✅ Web-based interface with UI/UX polish
+- 🔜 PWA/mobile support
+- 🔜 Browser extension for auto-fill
+- 🔜 Biometric unlock (where supported)
 
 ---
 
 ## 🤝 Contribute
 
-Pull requests, forks and suggestions are welcome!  
-Use LockrSafe to learn cryptography and CLI tools in Node.js, or make it your daily tool.  
-Let's build privacy-first software, one project at a time 💪
+Suggestions and PRs welcome! LockrSafe is built to teach and empower — fork it, extend it, and make it yours. Privacy-first by design 💪
 
 ---
 
 ## 📄 License
 
-MIT License © 2024 [Haiko]
+MIT License © 2025 [Haiko]
