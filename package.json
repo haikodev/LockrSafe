@@ -1,0 +1,18 @@
+{
+  "name": "lockrsafe",
+  "version": "1.0.0",
+  "description": "Secure, local-first password manager with web interface",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["password", "manager", "security", "vault", "crypto"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
